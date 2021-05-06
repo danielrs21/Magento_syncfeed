@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="DRS_SyncFeed::SyncFeed" title="SyncFeed" module="DRS_SyncFeed" sortOrder="51" resource="Magento_Backend::content" parent="Magento_Catalog::catalog"/>
+        <add id="DRS_SyncFeed::Match_Category" title="Match Category" module="DRS_SyncFeed" sortOrder="10" action="SyncFeed/Match" resource="DRS_SyncFeed::manage_match" parent="DRS_SyncFeed::SyncFeed"/>
+    </menu>
+</config>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="syncfeed_product" xsi:type="object">DRS\SyncFeed\Commands\SyncProduct</item>
+                <item name="syncfeed_image" xsi:type="object">DRS\SyncFeed\Commands\SyncImage</item>
+                <item name="syncfeed_reindex" xsi:type="object">DRS\SyncFeed\Commands\SyncReindex</item>
+            </argument>
+        </arguments>
+    </type>
+	<type name="DRS\SyncFeed\Logger\Handler\SyncLogger">
+	    <arguments>
+	        <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+	    </arguments>
+	</type>
+	<type name="DRS\SyncFeed\Logger\SyncLogger">
+	    <arguments>
+	        <argument name="name" xsi:type="string">SyncFeedLogger</argument>
+	        <argument name="handlers" xsi:type="array">
+	            <item name="system" xsi:type="object">DRS\SyncFeed\Logger\Handler\SyncLogger</item>
+	        </argument>
+	    </arguments>
+	</type>
+	<type name="DRS\SyncFeed\Logger\SyncLogQuery">
+	    <arguments>
+	        <argument name="name" xsi:type="string">SyncFeedLogQuery</argument>
+	        <argument name="handlers" xsi:type="array">
+	            <item name="system" xsi:type="object">DRS\SyncFeed\Logger\Handler\SyncLogQuery</item>
+	        </argument>
+	    </arguments>
+	</type>
+</config>

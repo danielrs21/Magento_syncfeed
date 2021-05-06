@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceBlock name="product.info.addtocart">
+			<action method="setTemplate">
+				<argument name="template" xsi:type="string">DRS_SyncFeed::catalog/product/view/addtocart.phtml</argument>
+			</action>
+		</referenceBlock>
+		<referenceBlock name="product.info.sku">
+			<arguments>
+				<argument name="at_call" xsi:type="string">getProductSku</argument>
+				<argument name="at_code" xsi:type="string">product_sku</argument>
+				<argument name="css_class" xsi:type="string">sku</argument>
+				<argument name="at_label" xsi:type="string">SKU</argument>
+				<argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
+			</arguments>
+		</referenceBlock>
+	</body>
+</page>
